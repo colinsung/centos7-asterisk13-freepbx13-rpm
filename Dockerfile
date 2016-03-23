@@ -20,4 +20,6 @@ RUN sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/selinux/config
 # install asterisk
 RUN adduser asterisk -s /sbin/nologin -c "Asterisk User"
 RUN yum-config-manager --add-repo http://yum.freepbxdistro.org/pbx/10.13.66/x86_64/
-RUN yum --nogpgcheck -y install asterisk13
+RUN yum --nogpgcheck -y install asterisk13 asterisk13-configs
+# for asterisk testsuite
+RUN yum -y install PyYAML python-twisted-core python-setuptools
