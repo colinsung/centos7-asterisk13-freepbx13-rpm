@@ -19,4 +19,4 @@ RUN pear install Console_getopt
 RUN sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/selinux/config
 # install asterisk
 RUN yum-config-manager --add-repo http://yum.freepbxdistro.org/pbx/10.13.66/x86_64/
-RUN yum --nogpgcheck install asterisk13
+RUN yum --nogpgcheck -y install asterisk13
