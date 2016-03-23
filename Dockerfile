@@ -18,5 +18,6 @@ RUN yum -y install httpd php php-mysql php-process php-pear php-mbstring php-xml
 RUN pear install Console_getopt
 RUN sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/selinux/config
 # install asterisk
+RUN adduser asterisk -s /sbin/nologin -c "Asterisk User"
 RUN yum-config-manager --add-repo http://yum.freepbxdistro.org/pbx/10.13.66/x86_64/
 RUN yum --nogpgcheck -y install asterisk13
