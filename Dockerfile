@@ -1,6 +1,9 @@
 FROM colinsung/c7-systemd
 
-RUN yum -y update && yum -y groupinstall core && yum -y groupinstall base && yum -y install epel-release
+RUN yum -y update
+RUN yum -y groupinstall core
+RUN yum -y groupinstall base
+RUN yum -y install epel-release
 RUN yum -y install automake gcc gcc-c++ ncurses-devel openssl-devel libxml2-devel unixODBC-devel \
   libcurl-devel libogg-devel libvorbis-devel speex-devel spandsp-devel freetds-devel net-snmp-devel \
   iksemel-devel corosynclib-devel newt-devel popt-devel libtool-ltdl-devel lua-devel sqlite-devel \
